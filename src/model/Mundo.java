@@ -1,7 +1,7 @@
 package model;
 
 import java.util.ArrayList;
-
+import processing.core.PConstants;
 import processing.core.PApplet;
 
 public class Mundo {
@@ -16,9 +16,10 @@ public class Mundo {
 		
 		this.app = app;
 		
-		polo = new ArrayList<>();
 		marco = new Marco(app, 300, 300);
+		polo = new ArrayList<>();
 		
+		//creates polos
 		for(int i = 0; i < 20; i++) {
 		    
 		    float posX = app.random(20, 550);
@@ -33,12 +34,15 @@ public class Mundo {
 		 
 	public void draw () {
 		
+		//marco
 		marco.draw();
 		new Thread(marco).start();
 		
-		for(int i = 0; i < polo.size() - 1; i++) {
+		
+		//polos
+		for(int i = 0; i < polo.size(); i++) {
 		    
-		    polo.get(i).draw(app);
+		    polo.get(i).draw(marco.isMessage());
 		   
 		    new Thread(polo.get(i)).start(); 
 		    
