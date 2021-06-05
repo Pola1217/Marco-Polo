@@ -34,6 +34,7 @@ public class main extends PApplet {
 	background(20);
 	
 	mundo.draw();
+	
 		//System.out.println(mouseX+","+mouseY);
 	
 	}

@@ -10,7 +10,9 @@ public class Polo implements Runnable {
 	  private float posX;
 	  private float posY;
 	  
+	  protected int dirX, dirY; 
 	  
+	  private int speed = 2;
 	  private int tam = 40;
 	  
 	  public Polo (PApplet app, float posX, float posY) {
@@ -20,6 +22,10 @@ public class Polo implements Runnable {
 		  this.posX = posX;
 		  this.posY = posY;
 		  
+		  dirX = 1; 
+		  dirY= 1; 
+			
+			
 		}
 		    
 	 public void draw( PApplet app) {
@@ -33,16 +39,33 @@ public class Polo implements Runnable {
 	}
 		      
 	 public void mov() {
-		        
-	     posX += app.random(-2, 2);
-		 posY += app.random(-2, 2);
-		        
+		 
+		 posX += 1*dirX; 
+		 posY+= 1*dirY;
+			
+			
+			if(posX<0 ||posX>app.width) {
+				dirX*=-1; 
+			}
+			if(posY<0 ||posY>app.width) {
+				dirY*=-1; 
+			}
+		 
 	 }
 	 
 	 public void run() {
 		    
 			mov();
-			    
-		  }
+			 
+			try {
+		      
+		        Thread.sleep(30);
+		        
+		    } catch (InterruptedException e) {
+		      
+		        e.printStackTrace();
+		        
+		    }
+	}
 		    
 }
