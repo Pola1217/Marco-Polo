@@ -35,14 +35,14 @@ public class Polo implements Runnable {
 		    
 	 public void draw (boolean message) {
 		 
+		 //polo
 		 app.fill(0,191,255);
 		 
 		 app.noStroke();
 		 
 		 app.circle(posX, posY, tam);
 		 
-		 //message
-		      
+		 //message  
 		 if (message) {
 			 
 			app.fill(255);
@@ -55,7 +55,6 @@ public class Polo implements Runnable {
 			 
 		 }
 		 
-		
 	}
 		      
 	 public void mov() {
@@ -64,18 +63,18 @@ public class Polo implements Runnable {
 		 posY+= 1 * dirY;
 			
 			
-			if(posX<0 || posX>app.width) {
+			if(posX<0 || posX > app.width) {
 				
 				dirX*=-1; 
 			
 			}
 			
-			if(posY<0 || posY>app.width) {
+			if(posY<0 || posY > app.width) {
 				
 				dirY*=-1; 
 				
 			}
-		 
+	 
 	 }
 	 
 	 public void run() {
@@ -92,5 +91,71 @@ public class Polo implements Runnable {
 		        
 		    }
 	}
+
+	public PApplet getApp() {
+		return app;
+	}
+
+	public void setApp(PApplet app) {
+		this.app = app;
+	}
+
+	public float getPosX() {
+		return posX;
+	}
+
+	public void setPosX(float posX) {
+		this.posX = posX;
+	}
+
+	public float getPosY() {
+		return posY;
+	}
+
+	public void setPosY(float posY) {
+		this.posY = posY;
+	}
+
+	public int getDir() {
+		return dir;
+	}
+
+	public void setDir(int dir) {
+		this.dir = dir;
+	}
+
+	public int getDirX() {
+		return dirX;
+	}
+
+	public void setDirX(int dirX) {
+		this.dirX = dirX;
+	}
+
+	public int getDirY() {
+		return dirY;
+	}
+
+	public void setDirY(int dirY) {
+		this.dirY = dirY;
+	}
+
+	public boolean isMessage() {
+		return message;
+	}
+
+	public void setMessage(boolean message) {
+		this.message = message;
+	}
+
+	public int getTam() {
+		return tam;
+	}
+
+	public void setTam(int tam) {
+		this.tam = tam;
+	}
+	 
+	 
 		    
 }

@@ -63,12 +63,14 @@ public class Marco implements Runnable {
 			app.text("MARCO", posX, posY + (dir-25));
 			
 			messTimer--;
+			
 			message = true;
 			
 			if (messTimer == 0) {
 				
 				Timer = 125;
 				messTimer = 125;
+				
 				message = false;
 				
 			}
@@ -114,6 +116,12 @@ public class Marco implements Runnable {
 		    }
 			    
 	}
+	 
+	 public void runIn() {
+		 
+		
+		 
+	 }
 
 	public PApplet getApp() {
 		return app;
